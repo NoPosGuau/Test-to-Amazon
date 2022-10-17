@@ -22,14 +22,14 @@ EN LA TERMINAL DEBES ESCRIBIR PARA CADA CASO DE USO.
 
 CASO DE USO NUMERO 1:
 • Cambiar el nombre el nombre del propietario de la cuenta.
-DOCIGO PARA EJECUTAR ESTE CASO DE USO CON SU MARKADOR: pytest -v -m name
+CODIGO PARA EJECUTAR ESTE CASO DE USO CON SU MARKADOR: pytest -v -m name
 
 
 CASO DE USO NUMERO 2:
 • Agregar o editar la dirección de entrega de la cuenta.
-DOCIGO PARA EJECUTAR ESTE CASO DE USO CON SU MARKADOR: pytest -v -m add
+CODIGO PARA EJECUTAR ESTE CASO DE USO CON SU MARKADOR: pytest -v -m add
 
 
 CASO DE USO NUMERO 3: 
 • Agregar un producto configurado al carrito (iPhone 13 Pro Max Color Plateado de 512GB)
-DOCIGO PARA EJECUTAR ESTE CASO DE USO CON SU MARKADOR: pytest -v -m car 
+CODIGO PARA EJECUTAR ESTE CASO DE USO CON SU MARKADOR: pytest -v -m car 
