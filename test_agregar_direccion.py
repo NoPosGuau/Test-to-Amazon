@@ -4,10 +4,11 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support import expected_conditions as EC
 from pytest import mark
+from time import sleep
 
 @mark.add
 def test_address():
-    driver = webdriver.Chrome()
+     driver = webdriver.Chrome()
     driver.get('https://www.amazon.com')
     wait = WebDriverWait(driver, 120)
 
@@ -18,7 +19,7 @@ def test_address():
     assert cuentbtn_add.is_displayed()
 
     # apunta al text para poner nombre o usuario y le envia un correo
-    cuentain = wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'a-input-text a-span12 auth-autofocus auth-required-field')))
+    cuentain = driver.find_element(By.XPATH, '//*[@id="ap_email"]')
     cuentain.send_keys("natividadromney@gmail.com")
 
     # apunta al boton de continuar
@@ -27,13 +28,12 @@ def test_address():
     assert cuentabtn2_add.is_displayed()
 
     # apunta a la contraseña y la introduce
-    cuentabtn3_add = wait.until(EC.visibility_of_element_located((By.ID, 'ap_password')))
+    cuentabtn3_add = driver.find_element(By.NAME, 'password')
     cuentabtn3_add.send_keys("samuel.romney14")
 
     # apunta al boton de iniciar seccion
-    cuentabtn4_add = wait.until(EC.visibility_of_element_located((By.ID, 'signInSubmit')))
-    cuentabtn4_add.click()
-    assert cuentabtn4_add.is_displayed()
+    cuentabtn4add = wait.until(EC.visibility_of_element_located((By.ID, 'signInSubmit')))
+    cuentabtn4add.click()
 
     # CASO DE USO NUMERO 2, AÑADIR UNA DIRECCION DE ENTREGA
     #apunta al boton de la cuenta
@@ -86,3 +86,4 @@ def test_address():
     inicio = wait.until(EC.visibility_of_element_located((By.ID, 'nav-logo-sprites')))
     inicio.click()
     assert inicio.is_displayed()
+    sleep(15)
