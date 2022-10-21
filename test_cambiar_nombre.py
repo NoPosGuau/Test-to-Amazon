@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
 
 @mark.name
 def test_nombre():
@@ -34,7 +35,6 @@ def test_nombre():
     # apunta al boton de iniciar seccion
     nameintro = wait.until(EC.visibility_of_element_located((By.ID, 'signInSubmit')))
     nameintro.click()
-    assert nameintro.is_displayed()
 
     # MENU DE AJUSTES EN AMAZON
     # apunta al boton que direcciona a la cuenta
@@ -74,3 +74,4 @@ def test_nombre():
     youraddress = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="a-page"]/div[2]/div/div[6]/div[1]/div/div/ul/li[1]/span/a')))
     youraddress.click()
     assert youraddress.is_displayed()
+    sleep(15)
