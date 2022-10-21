@@ -68,8 +68,10 @@ def test_carrito():
     # apunta al boton de añadir al carrito, despues de seleccionar las especificaciones
     iphonecarrito = wait.until(EC.visibility_of_element_located((By.XPATH, '//*[@id="add-to-cart-form"]/div/span[1]/span/input')))
     iphonecarrito.click()
+    sleep(3)
 
     # Apunta al boton de no thanks del plan de proteccion
-    btnnothanks = driver.find_element(By.CLASS_NAME, 'a-button-text')
+    btnnothanks = driver.find_element(By.XPATH, '//*[@id="root"]/div/div/div/div[1]/div/div[1]/div/div[2]/div[2]/div[2]/div/div/div/span/span[2]/span/button')
     btnnothanks.click()
+    sleep(2)
     sleep(15)
